@@ -1,0 +1,37 @@
+$rootscope 在循环内外都能使用
+$scope 不同于$rootscope
+ng-init
+ng-bind
+ng-app
+ng-controller
+var app=angular.module("myApp",[])//初始化一个模块，约定俗成
+app.controller("myctrl",function（$scope）{
+	$scope.names=['emails','tomato','']
+})
+Scope(作用域) 是应用在 HTML (视图) 和 JavaScript (控制器)之间的纽带。
+Scope 是一个对象，有可用的方法和属性。
+Scope 可应用在视图和控制器上。
+Service服务（可自定义）
+$location
+$timeout
+$interval
+Http服务
+读取json
+var app=angular.module('myApp',[]);
+app.controller("siteCtrl",function($scope,$http){
+ $http.get("http://www.google.com").success(function(response){
+$scope.names=response.sites;
+})
+})
+ng-option
+<div ng-app="myApp" ng-controller="myCtrl">
+<select ng-init="selectName=names[0]"ng-model="selectName"ng-options="x for x in names">
+</div>
+<script>
+    var app=module（'myApp',[]）;
+    app.controller('myCtrl',function($scope){
+	$scope.names=["ni","wo","ta"];
+})
+</script>
+vue 
+ctrl+alt+l
